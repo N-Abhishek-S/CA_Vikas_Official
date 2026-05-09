@@ -1,0 +1,16 @@
+node_modules/
+dist/
+
+.chrome-button-audit/
+.chrome-button-class/
+.chrome-debug-explicit/
+.chrome-debug-explicit-2/
+.chrome-debug-import/
+.chrome-debug-react/
+.chrome-profile-cta-audit/
+.chrome-profile-manual/
+.chrome-visual-desktop/
+.chrome-visual-mobile/
+
+.vscode/
+.DS_Store
