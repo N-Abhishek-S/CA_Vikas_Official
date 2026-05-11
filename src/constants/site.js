@@ -1,288 +1,342 @@
 import {
-  ArrowUpRight,
-  Award,
   BadgeCheck,
+  Banknote,
   BarChart3,
   BriefcaseBusiness,
   Building2,
-  Calculator,
-  ChartNoAxesCombined,
   ClipboardCheck,
+  Facebook,
   FileCheck2,
+  FileText,
+  Handshake,
+  Instagram,
   Landmark,
-  LockKeyhole,
-  MessageSquareText,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
   ReceiptText,
   Scale,
   ShieldCheck,
-  Sparkles,
   Timer,
-  TrendingUp,
-  Users,
+  Twitter,
 } from 'lucide-react';
-import caPrincipal from '../assets/gallery/ca-principal.png';
-import staffCollaboration from '../assets/gallery/staff-collaboration.png';
-import officeBoardroom from '../assets/gallery/office-boardroom.svg';
-import auditDesk from '../assets/gallery/audit-desk.png';
-import clientConsultation from '../assets/gallery/client-consultation.svg';
+import brandMark from '../assets/gallery/brand-mark.png';
+import principalPhoto from '../assets/gallery/ca-principal.png';
+import officePhoto from '../assets/gallery/staff-collaboration.png';
+import auditDeskPhoto from '../assets/gallery/audit-desk.png';
+
+export const brand = {
+  name: 'VOK & Associates',
+  descriptor: 'Chartered Accountants',
+  logo: brandMark,
+  established: '2014',
+  experience: '11+',
+  tagline: 'Tax • Audit • GST • Compliance',
+};
+
+export const media = {
+  principal: principalPhoto,
+  office: officePhoto,
+  auditDesk: auditDeskPhoto,
+};
 
 export const navLinks = [
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Team', href: '#team' },
-  { label: 'Proof', href: '#proof' },
-  { label: 'Insights', href: '#insights' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ];
 
-export const heroStats = [
-  { label: 'Years of advisory experience', value: 12, suffix: '+' },
-  { label: 'Clients served across sectors', value: 420, suffix: '+' },
-  { label: 'Tax filings managed', value: 3100, suffix: '+' },
-  { label: 'Business consultations', value: 850, suffix: '+' },
+export const companyIntro = [
+  'Established in 2014, VOK & Associates has been consistently delivering professional, reliable, and business-oriented financial solutions across taxation, audit, accounting, compliance, and financial advisory.',
+  'The firm supports businesses, startups, professionals, and individuals through India’s evolving financial and regulatory landscape, including GST implementation, faceless income tax assessments, digital compliance systems, updated corporate laws, and changing taxation frameworks.',
+  'The practice also specializes in project finance and subsidy consultancy for agricultural, industrial, and infrastructure projects, including DPRs, CMA data, bank loan proposals, subsidy applications, and financial projections.',
 ];
 
-export const timeline = [
+export const visionMission = {
+  vision:
+    'To become a trusted and forward-thinking financial advisory firm, delivering transparent, innovative, and result-oriented solutions that empower businesses and individuals to achieve sustainable growth, financial stability, and full regulatory compliance in an evolving economic environment.',
+  mission: [
+    'To provide accurate, ethical, and timely professional services in taxation, audit, accounting, compliance, and financial advisory.',
+    'To simplify complex financial and regulatory processes through practical and technology-driven solutions.',
+    'To build long-term client relationships based on trust, integrity, confidentiality, and professional excellence.',
+    'To continuously upgrade knowledge and expertise in line with changing laws, digital systems, and industry practices.',
+    'To support startups, businesses, professionals, and individuals with strategic financial guidance for growth and compliance success.',
+  ],
+};
+
+export const heroTrustItems = [
+  { value: '11+', label: 'Years Experience' },
+  { value: 'Since', label: '2014' },
+  { value: 'Tax', label: 'Audit • GST • Compliance' },
+];
+
+export const serviceCategories = [
   {
-    year: '2012',
-    title: 'CA Practice Founded',
-    description: 'Established a compliance-first practice for founders, professionals, and family businesses.',
+    title: 'MCA & ROC Compliance',
+    icon: Building2,
+    description:
+      'Reliable MCA and ROC compliance for Private Limited Companies, LLPs, and OPCs, from annual filings to secretarial documentation.',
+    items: [
+      'Annual ROC Filings (AOC-4 & MGT-7)',
+      'DIR-3 KYC for Directors',
+      'Board Resolutions & Meeting Documentation',
+      'Statutory Registers & Secretarial Records',
+      'Company Strike-Off Services',
+      'LLP, OPC & Pvt Ltd Compliance',
+      'Business Entity Conversion Services',
+      'Secretarial Compliance Support',
+      'MCA Filing & Documentation Assistance',
+      'Ongoing Corporate Compliance Management',
+    ],
   },
   {
-    year: '2016',
-    title: 'GST Advisory Desk',
-    description: 'Built a dedicated indirect tax desk for filing, reconciliation, notices, and compliance strategy.',
+    title: 'Audit & Assurance',
+    icon: ShieldCheck,
+    description:
+      'Audit services conducted by ICAI-qualified Chartered Accountants to strengthen financial reporting, operational efficiency, and internal controls.',
+    items: [
+      'Statutory Audit under Companies Act, 2013',
+      'Tax Audit & Form 3CD Filing',
+      'Internal Audit & SOP Review',
+      'Cooperative Society Audit',
+      'Internal Audit for Cooperative Societies',
+      'GST Audit & Compliance Review',
+      'Stock Audit & Revenue Audit',
+      'Forensic Audit & Investigations',
+      'Financial Due Diligence',
+      'Risk Assessment & Internal Control Evaluation',
+      'Special Purpose Audit Assignments',
+      'Compliance & Process Review Services',
+      'Concurrent Audit of Bank Branches',
+    ],
   },
   {
-    year: '2020',
-    title: 'Virtual CFO Services',
-    description: 'Expanded into management reporting, cash-flow controls, and executive finance advisory.',
+    title: 'Income Tax',
+    icon: ReceiptText,
+    description:
+      'Accurate tax compliance, effective planning, and timely advisory for individuals, professionals, firms, and companies.',
+    items: [
+      'ITR Filing for Individuals, HUFs, Firms & Companies',
+      'Tax Audit u/s 44AB & Form 3CD Filing',
+      'Compliance as per Latest Income Tax Rules, 2025',
+      'Advance Tax Computation & Strategic Tax Planning',
+      'Capital Gains Planning u/s 54, 54F & 54EC',
+      'NRI Taxation & DTAA Advisory',
+      'Income Tax Notice Handling & Representation',
+      'CIT(A) & ITAT Appeal Assistance',
+      'TDS/TCS Compliance & Return Filing',
+      'Business, Professional & Corporate Tax Advisory',
+      'Startup & MSME Tax Compliance',
+    ],
   },
   {
-    year: '2025',
-    title: 'Strategic Growth Office',
-    description: 'Integrated tax, audit, and business consulting into a premium finance partner model.',
+    title: 'GST & Indirect Tax',
+    icon: FileCheck2,
+    description:
+      'Complete GST support from registration and returns to reconciliations, audits, refunds, and departmental representation.',
+    items: [
+      'New GST Registration & Amendments',
+      'Monthly GSTR-1 & GSTR-3B Filing',
+      'Annual GSTR-9 & GSTR-9C Reconciliation',
+      'ITC Matching & GSTR-2B Reconciliation',
+      'GST Audit & Department Representation',
+      'E-Invoicing & E-Way Bill Management',
+      'GST Notice Reply & Compliance Support',
+      'LUT Filing & Refund Assistance',
+      'GST Advisory for Businesses & Professionals',
+      'MSME, Trader & Manufacturer GST Compliance',
+      'GST Registration Cancellation & Revocation',
+      'Indirect Tax Planning & Compliance Review',
+    ],
+  },
+  {
+    title: 'Loan & Subsidy Consultancy',
+    icon: Banknote,
+    description:
+      'Funding and subsidy guidance for businesses, startups, farmers, and entrepreneurs, from documentation to approval support.',
+    items: [
+      'Project Report (DPR) Preparation',
+      'CGTMSE Loan Assistance',
+      'CMEGP & PMEGP Subsidy Consultancy',
+      'Mudra Loan & MSME Loan Assistance',
+      'Term Loan & Cash Credit (CC) Support',
+      'Machinery & Equipment Finance',
+      'Agriculture & Food Processing Subsidy Assistance',
+      'Startup & MSME Funding Guidance',
+      'Bank Loan Documentation & CMA Data Preparation',
+      'Government Subsidy Scheme Consultancy',
+      'Working Capital Loan Assistance',
+      'Financial Projection & Business Planning Services',
+    ],
+  },
+  {
+    title: 'Miscellaneous Services',
+    icon: ClipboardCheck,
+    description:
+      'Registration, accounting, reporting, bookkeeping, payroll, licensing, and business documentation support for operating teams.',
+    items: [
+      'FSSAI Registration & License',
+      'Shop Act / Gumasta Registration',
+      'Udyam (MSME) Registration',
+      'IEC Code (Import Export Code)',
+      'Trade License & Professional Tax Registration',
+      'Accounting & Bookkeeping Services',
+      'Tally Setup & Outsourced Accounting',
+      'Payroll Processing & Salary Compliance',
+      'MIS Reporting & Financial Statements',
+      'Bank & GST Reconciliation',
+      'Cooperative Society Registration',
+      'Housing & Credit Society Consultancy',
+      'Partnership Deed Drafting',
+      'Financial Projections & CMA Report',
+      'Trademark Registration',
+      'GEM Portal Registration',
+      'Government Tender Documentation Support',
+      'Rice Mill & Food Processing Consultancy',
+      'Agro & Rural Business Advisory',
+      'Subsidy Guidance for Manufacturing Units',
+      'Warehouse & Logistics Compliance',
+    ],
   },
 ];
 
-export const credentials = [
+export const whyChooseUs = [
+  {
+    icon: Timer,
+    title: '11+ Years Professional Excellence',
+    copy: 'Established in 2014, the firm has evolved alongside India’s dynamic financial and regulatory environment.',
+  },
   {
     icon: BadgeCheck,
-    title: 'Chartered Accountant',
-    description: 'Qualified CA practice with strict professional standards and ethical financial governance.',
+    title: 'Experienced Chartered Accountants',
+    copy: 'Audit and assurance work is conducted by ICAI-qualified Chartered Accountants with disciplined professional standards.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Audit & Assurance',
-    description: 'Controls-led audits, financial statement review, and management-level reporting clarity.',
+    icon: Scale,
+    title: 'Regulatory Expertise',
+    copy: 'Clients are guided through GST, updated corporate laws, faceless assessments, digital compliance systems, and changing taxation frameworks.',
   },
   {
-    icon: Landmark,
-    title: 'Tax Strategy',
-    description: 'Direct and indirect tax planning aligned with compliance, documentation, and business goals.',
-  },
-];
-
-export const services = [
-  {
-    icon: Calculator,
-    title: 'Tax Planning',
-    description: 'Forward-looking direct tax strategies for individuals, founders, and growing businesses.',
+    icon: Handshake,
+    title: 'Transparent Process',
+    copy: 'The firm focuses on practical, transparent, and result-driven solutions tailored to each client’s requirements.',
   },
   {
-    icon: ReceiptText,
-    title: 'GST Filing',
-    description: 'Accurate filing, reconciliation, notices, and compliance calendars with zero loose ends.',
-  },
-  {
-    icon: FileCheck2,
-    title: 'Auditing',
-    description: 'Statutory, internal, and process audits with clear reporting and actionable controls.',
+    icon: FileText,
+    title: 'Timely Compliance',
+    copy: 'Professional services are delivered with accuracy, ethics, timely execution, and ongoing compliance management.',
   },
   {
     icon: BarChart3,
-    title: 'Financial Consulting',
-    description: 'Cash-flow planning, performance dashboards, budgeting, and decision-ready reporting.',
+    title: 'Business-Focused Solutions',
+    copy: 'Taxation, audit, accounting, regulatory compliance, financial advisory, project finance, and subsidy support are aligned with business needs.',
   },
-  {
-    icon: Building2,
-    title: 'Business Registration',
-    description: 'Entity setup, registrations, documentation, and early compliance architecture.',
-  },
-  {
-    icon: ClipboardCheck,
-    title: 'Compliance Management',
-    description: 'A structured compliance operating rhythm that reduces deadline and penalty risk.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Investment Advisory',
-    description: 'Tax-aware portfolio guidance and financial planning for long-horizon wealth decisions.',
-  },
-  {
-    icon: BriefcaseBusiness,
-    title: 'Startup Consulting',
-    description: 'Founder-friendly finance systems, registrations, projections, and investor diligence support.',
-  },
-];
-
-export const galleryItems = [
-  {
-    title: 'Principal advisory desk',
-    category: 'CA Sir',
-    image: caPrincipal,
-    description: 'Senior-led consultation environment for taxation, audit, and strategic finance planning.',
-    featured: true,
-  },
-  {
-    title: 'Compliance team review',
-    category: 'Staff',
-    image: staffCollaboration,
-    description: 'Structured review sessions across GST, filings, reconciliation, and client reporting.',
-  },
-  {
-    title: 'Client meeting room',
-    category: 'Office',
-    image: officeBoardroom,
-    description: 'A calm, confidential office setting for business owners and finance leaders.',
-  },
-  {
-    title: 'Audit documentation desk',
-    category: 'Audit',
-    image: auditDesk,
-    description: 'Evidence-led audit preparation, schedules, and control documentation.',
-  },
-  {
-    title: 'Consultation in progress',
-    category: 'Clients',
-    image: clientConsultation,
-    description: 'Practical financial guidance designed for clarity, confidence, and execution.',
-  },
-];
-
-export const teamMembers = [
-  {
-    name: 'CA Person',
-    role: 'Founder & Principal Chartered Accountant',
-    image: caPrincipal,
-    icon: Award,
-    expertise: ['Tax strategy', 'Audit assurance', 'Virtual CFO'],
-    description: 'Leads complex advisory, review, and client strategy mandates with a governance-first approach.',
-  },
-  {
-    name: 'Senior Compliance Desk',
-    role: 'GST, filings, and statutory coordination',
-    image: staffCollaboration,
-    icon: ClipboardCheck,
-    expertise: ['GST filing', 'ROC support', 'Compliance calendars'],
-    description: 'Keeps recurring compliance structured, reviewed, and deadline-ready across client portfolios.',
-  },
-  {
-    name: 'Audit & Reporting Team',
-    role: 'Assurance documentation and management reports',
-    image: auditDesk,
-    icon: FileCheck2,
-    expertise: ['Internal audit', 'MIS reports', 'Controls review'],
-    description: 'Turns financial records into clean schedules, audit trails, and decision-ready reporting packs.',
-  },
-];
-
-export const trustDrivers = [
-  { icon: Scale, label: 'Transparency', value: 98, suffix: '%', copy: 'Clear scope, clean documentation, and practical explanations.' },
-  { icon: ChartNoAxesCombined, label: 'Accuracy', value: 99, suffix: '%', copy: 'Review-led delivery for filings, reconciliations, and reports.' },
-  { icon: Users, label: 'Client Satisfaction', value: 96, suffix: '%', copy: 'Responsive, relationship-driven service for long-term clients.' },
-  { icon: LockKeyhole, label: 'Secure Handling', value: 100, suffix: '%', copy: 'Confidential financial records handled with disciplined controls.' },
-  { icon: MessageSquareText, label: 'Expert Consultation', value: 850, suffix: '+', copy: 'Structured sessions that turn complexity into decisive action.' },
-  { icon: Timer, label: 'Fast Response', value: 24, suffix: 'h', copy: 'Priority query resolution for active clients and urgent matters.' },
 ];
 
 export const testimonials = [
   {
-    quote: 'CA Person brought the level of financial discipline we expected from a much larger advisory firm. Our tax, GST, and monthly reporting finally speak the same language.',
-    name: 'Rohan Mehta',
-    role: 'Founder, SaaS Operations',
+    company: 'R.K. Rice Udyog',
+    quote:
+      'A highly professional and trustworthy CA firm providing valuable financial and compliance guidance to businesses, farmers, and entrepreneurs. Their dedication and service quality are truly commendable.',
   },
   {
-    quote: 'The audit process was rigorous without slowing the business. Every recommendation was specific, practical, and immediately useful to our management team.',
-    name: 'Ananya Shah',
-    role: 'Director, Manufacturing Group',
+    company: 'Kargar Business Services Private Limited',
+    quote:
+      'The firm has provided excellent support in ROC compliance, company filings, and financial advisory services for our HR businesses. Their professional approach, timely execution, and strong knowledge of corporate compliance make them a highly reliable consulting partner.',
   },
   {
-    quote: 'We moved from reactive compliance to a predictable finance calendar. That alone saved leadership hours every month.',
-    name: 'Vikram Rao',
-    role: 'Partner, Professional Services',
+    company: 'HR Remedy India Private Limited',
+    quote:
+      'We appreciate the firm’s professional support in taxation, ROC compliance, accounting, and financial advisory services. Their prompt response, technical expertise, and dependable guidance have been extremely valuable for our organization.',
   },
   {
-    quote: 'The startup registration and financial model support helped us enter investor conversations with confidence and proper documentation.',
-    name: 'Nisha Kapoor',
-    role: 'Co-founder, Consumer Tech',
+    company: 'Shiv Agro Industries',
+    quote:
+      'The firm has provided excellent support in financial management, taxation, compliance, and machinery project consultancy for our business. Their practical approach, timely guidance, and professional expertise have greatly contributed to our operational growth and business planning.',
+  },
+  {
+    company: 'Indrakshi Eye Care',
+    quote:
+      'The firm provides highly professional and reliable taxation, accounting, and financial advisory services with complete transparency and accuracy. Their timely guidance and client-focused approach make them a trusted financial partner.',
+  },
+  {
+    company: 'Prayas Hospital',
+    quote:
+      'The firm offers excellent professional support in taxation, accounting, and financial compliance services. Their timely advice, transparency, and dependable approach have been truly valuable and trustworthy.',
+  },
+  {
+    company: 'Matoshree Hospital',
+    quote:
+      'The firm provides professional and dependable support in taxation, accounting, and financial compliance services. Their timely guidance, transparency, and efficient approach make them a trusted financial advisor for medical professionals.',
+  },
+  {
+    company: 'Mukund Sortex',
+    quote:
+      'We are very satisfied with the firm’s support in GST, accounting, loan, and subsidy work for our rice mill. Their timely service, clear guidance, and helpful approach make them a trusted advisor for our business.',
+  },
+  {
+    company: 'Kanha Developers',
+    quote:
+      'We are very happy with the firm’s support in GST, accounting, and compliance work for our real estate projects and commercial complexes. Their simple guidance, timely service, and professional approach make financial work easy and hassle-free.',
+  },
+  {
+    company: 'Dry Fruits Wala',
+    quote:
+      'The team is very friendly, supportive, and always available whenever needed. Their excellent service, clear guidance, and professional approach make all our GST, accounting, and compliance work smooth and stress-free.',
   },
 ];
 
-export const caseStudies = [
-  {
-    metric: '18%',
-    label: 'tax efficiency improved',
-    title: 'Tax Savings Architecture',
-    description: 'Restructured deductions, advance tax planning, and documentation flow for a multi-entity services group.',
-    chart: [46, 58, 52, 68, 79, 88],
-  },
-  {
-    metric: '21 days',
-    label: 'to full registration readiness',
-    title: 'Startup Launch Compliance',
-    description: 'Built entity setup, GST registration, founder documentation, and first-year compliance calendar.',
-    chart: [22, 36, 44, 62, 74, 91],
-  },
-  {
-    metric: '34%',
-    label: 'audit cycle time reduced',
-    title: 'Audit Optimization',
-    description: 'Introduced evidence trails, pre-close checks, and control mapping for a recurring statutory audit.',
-    chart: [72, 66, 52, 44, 38, 31],
-  },
-  {
-    metric: '3.2x',
-    label: 'forecast clarity increased',
-    title: 'Growth Advisory Model',
-    description: 'Created board-ready cash-flow scenarios, margin dashboards, and strategic finance review cadence.',
-    chart: [20, 28, 41, 57, 76, 96],
-  },
-];
+export const contact = {
+  address: 'Office No 122, 123 Shivarpan Tower, Rajiv Gandhi Square, Bhandara, Maharashtra, India, 441904',
+  phones: ['7498542069', '7385542069'],
+  landline: '07184-257999',
+  emails: ['caoffice.vok.co.in', 'vikas@vok.co.in'],
+  social: [
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/vokandassociates?igsh=cW85bXAzNTUwYmI0',
+      icon: Instagram,
+    },
+    {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/share/18hhymMXgu/',
+      icon: Facebook,
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/vok-and-associates-79882b409',
+      icon: Linkedin,
+    },
+    {
+      label: 'X',
+      href: 'https://x.com/vokoffice',
+      icon: Twitter,
+    },
+  ],
+};
 
-export const insights = [
+export const contactCards = [
   {
-    category: 'Tax Updates',
-    title: 'How proactive tax planning changes year-end outcomes',
-    readTime: '6 min read',
+    label: 'Office',
+    value: contact.address,
+    icon: MapPin,
   },
   {
-    category: 'GST Guides',
-    title: 'A practical GST reconciliation checklist for growing teams',
-    readTime: '5 min read',
+    label: 'Phone',
+    value: `${contact.phones.join(' / ')} • Landline: ${contact.landline}`,
+    icon: Phone,
   },
   {
-    category: 'Startup Finance',
-    title: 'The founder finance stack before your first diligence round',
-    readTime: '8 min read',
+    label: 'Email',
+    value: contact.emails.join(' / '),
+    icon: Mail,
   },
   {
-    category: 'Business Law',
-    title: 'Compliance calendars that protect management bandwidth',
-    readTime: '4 min read',
+    label: 'Advisory Scope',
+    value: 'Taxation, audit, accounting, compliance, financial advisory, project finance, and subsidy consultancy.',
+    icon: BriefcaseBusiness,
   },
-];
-
-export const contactDetails = [
-  { label: 'Office', value: 'Financial District, Mumbai' },
-  { label: 'Hours', value: 'Mon-Sat, 10:00 AM - 7:00 PM' },
-  { label: 'Email', value: 'consult@caperson.in' },
-  { label: 'Phone', value: '+91 98765 43210' },
-];
-
-export const socialLinks = [
-  { label: 'LinkedIn', href: '#', icon: ArrowUpRight },
-  { label: 'X', href: '#', icon: ArrowUpRight },
-  { label: 'YouTube', href: '#', icon: ArrowUpRight },
 ];

@@ -13,4 +13,6 @@ export function initGsap() {
   registered = true;
 }
 
+initGsap();
+
 export { gsap, ScrollTrigger };

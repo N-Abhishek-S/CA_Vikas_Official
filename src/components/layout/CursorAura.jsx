@@ -30,5 +30,5 @@ export default function CursorAura() {
     };
   }, []);
 
-  return <div ref={auraRef} className="pointer-events-none fixed left-0 top-0 z-[80] hidden h-[280px] w-[280px] rounded-full bg-cyan/12 blur-3xl lg:block" />;
+  return <div ref={auraRef} className="pointer-events-none fixed left-0 top-0 z-80 hidden h-70 w-70 rounded-full bg-green/10 blur-3xl lg:block" />;
 }

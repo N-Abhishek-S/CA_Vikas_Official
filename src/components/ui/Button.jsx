@@ -6,29 +6,26 @@ const baseClasses = [
   'font-semibold leading-none outline-none',
   'transition-[transform,background,border-color,box-shadow,color] duration-300 ease-out',
   'will-change-transform hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985]',
-  'focus-visible:ring-2 focus-visible:ring-gold/70 focus-visible:ring-offset-2 focus-visible:ring-offset-navy',
+  'focus-visible:ring-2 focus-visible:ring-orange/45 focus-visible:ring-offset-2 focus-visible:ring-offset-paper',
   'disabled:pointer-events-none disabled:translate-y-0 disabled:opacity-55',
 ].join(' ');
 
 const primaryClasses = [
-  'border border-[#ead8b5]/70',
-  'bg-[linear-gradient(180deg,#e0c996_0%,#c7a36b_48%,#b68a5a_100%)]',
-  '!text-ink shadow-[0_18px_55px_rgba(199,163,107,0.28),inset_0_1px_0_rgba(246,242,234,0.44)]',
-  'hover:border-ivory/70 hover:!text-ink hover:bg-[linear-gradient(180deg,#ead7ad_0%,#cda96f_48%,#ab7c4d_100%)]',
-  'hover:shadow-[0_24px_72px_rgba(199,163,107,0.36),0_0_0_1px_rgba(246,242,234,0.14),inset_0_1px_0_rgba(246,242,234,0.5)]',
+  'border border-blue/10',
+  'bg-[linear-gradient(135deg,#1d638f_0%,#13537c_54%,#0f4265_100%)]',
+  '!text-white shadow-[0_18px_42px_rgba(19,83,124,0.26),inset_0_1px_0_rgba(255,255,255,0.22)]',
+  'hover:border-green/35 hover:bg-[linear-gradient(135deg,#25749e_0%,#165d89_48%,#0f4265_100%)]',
+  'hover:!text-white hover:shadow-[0_24px_64px_rgba(19,83,124,0.34),0_0_0_4px_rgba(76,178,68,0.08),inset_0_1px_0_rgba(255,255,255,0.26)]',
 ].join(' ');
 
 const secondaryClasses = [
-  'border border-ivory/[0.22] bg-navy/[0.58] text-ivory',
-  'shadow-[0_16px_48px_rgba(11,31,51,0.22),inset_0_1px_0_rgba(246,242,234,0.08)]',
-  'backdrop-blur-xl',
-  'hover:border-gold/55 hover:bg-slateblue/[0.68] hover:text-ivory',
-  'hover:shadow-[0_22px_64px_rgba(11,31,51,0.3),0_0_0_1px_rgba(199,163,107,0.14),inset_0_1px_0_rgba(246,242,234,0.12)]',
+  'border border-blue/18 bg-white/82 !text-blue shadow-[0_14px_36px_rgba(24,66,95,0.11),inset_0_1px_0_rgba(255,255,255,0.7)]',
+  'backdrop-blur-xl hover:border-green/38 hover:bg-paper hover:text-deep',
+  'hover:shadow-[0_20px_54px_rgba(24,66,95,0.16),0_0_0_4px_rgba(76,178,68,0.08)]',
 ].join(' ');
 
 const ghostClasses = [
-  'border border-transparent bg-transparent text-ivory/82',
-  'shadow-none hover:border-ivory/18 hover:bg-ivory/[0.08] hover:text-ivory',
+  'border border-transparent bg-transparent text-blue/78 shadow-none hover:border-blue/12 hover:bg-blue/5 hover:text-deep',
 ].join(' ');
 
 const variants = {
@@ -39,19 +36,16 @@ const variants = {
   navPrimary: clsx(primaryClasses, 'min-h-11 px-5 text-sm'),
   navSecondary: clsx(
     'min-h-11 px-5 text-sm',
-    'border border-ivory/20 bg-ivory/[0.08] text-ivory',
-    'shadow-[inset_0_1px_0_rgba(246,242,234,0.08)] backdrop-blur-xl',
-    'hover:border-gold/55 hover:bg-ivory/[0.13] hover:text-ivory',
+    'border border-blue/14 bg-paper/80 !text-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] backdrop-blur-xl',
+    'hover:border-green/38 hover:bg-white hover:text-deep',
   ),
   navGhost: clsx(
     'min-h-11 px-5 text-sm',
-    'border border-ivory/20 bg-ivory/[0.08] text-ivory',
-    'shadow-[inset_0_1px_0_rgba(246,242,234,0.08)] backdrop-blur-xl',
-    'hover:border-gold/55 hover:bg-ivory/[0.13] hover:text-ivory',
+    'border border-transparent bg-transparent text-blue/78 shadow-none hover:border-blue/12 hover:bg-blue/5 hover:text-deep',
   ),
-  dark: secondaryClasses,
-  link: 'rounded-none border-0 bg-transparent p-0 text-bronze shadow-none hover:text-ink hover:shadow-none',
-  linkDark: 'rounded-none border-0 bg-transparent p-0 text-gold shadow-none hover:text-ivory hover:shadow-none',
+  dark: primaryClasses,
+  link: 'rounded-none border-0 bg-transparent p-0 text-blue shadow-none hover:text-green hover:shadow-none',
+  linkDark: 'rounded-none border-0 bg-transparent p-0 text-white shadow-none hover:text-orange hover:shadow-none',
 };
 
 const sizes = {
@@ -61,7 +55,15 @@ const sizes = {
   xl: 'min-h-15 px-8 text-base',
 };
 
-export default function Button({ children, href, variant = 'primary', size = 'md', className = '', icon = true, ...props }) {
+export default function Button({
+  children,
+  href,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  icon = true,
+  ...props
+}) {
   const isLinkVariant = variant === 'link' || variant === 'linkDark';
   const classes = clsx(
     baseClasses,
@@ -73,7 +75,12 @@ export default function Button({ children, href, variant = 'primary', size = 'md
   const content = (
     <>
       <span>{children}</span>
-      {icon && <ArrowUpRight size={17} className="transition duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5" />}
+      {icon && (
+        <ArrowUpRight
+          size={17}
+          className="transition duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5"
+        />
+      )}
     </>
   );
 

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion as Motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { navLinks } from '../../constants/site.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeMenu, selectIsMenuOpen, toggleMenu } from '../../app/navbarSlice.js';
+import { brand, navLinks } from '../../constants/site.js';
 import Button from '../ui/Button.jsx';
-import brandMark from '../../assets/brand-mark.svg';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector(selectIsMenuOpen);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,29 +18,31 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const close = () => setOpen(false);
+  const close = () => dispatch(closeMenu());
 
   return (
     <header
       className={`site-header ${scrolled ? 'site-header--scrolled' : 'site-header--transparent'}`}
     >
-      <nav className="site-nav-shell mx-auto flex h-18 max-w-[1480px] items-center justify-between px-4 sm:h-20 sm:px-7 lg:px-8">
+      <nav className="site-nav-shell mx-auto flex h-18 max-w-370 items-center justify-between px-4 sm:h-20 sm:px-7 lg:px-8">
         <a
           href="#home"
           className="brand-link group flex items-center gap-3"
-          aria-label="CA Person home"
+          aria-label={`${brand.name} home`}
         >
-          <img
-            src={brandMark}
-            alt=""
-            className="brand-mark h-11 w-11 rounded-full"
-          />
+          <span className="brand-mark grid h-12 w-16 place-items-center rounded-2xl bg-white p-1.5 sm:w-18">
+            <img
+              src={brand.logo}
+              alt=""
+              className="h-full w-full object-contain"
+            />
+          </span>
           <span className="leading-tight">
             <span className="brand-title block font-display text-lg font-semibold">
-              CA Person
+              {brand.name}
             </span>
             <span className="brand-subtitle block text-xs uppercase tracking-[0.24em]">
-              Advisory Office
+              {brand.descriptor}
             </span>
           </span>
         </a>
@@ -57,7 +61,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button href="#contact" size="sm" variant="navSecondary">
-            Client Desk
+            Contact
           </Button>
           <Button href="#contact" size="sm" variant="navPrimary">
             Book Consultation
@@ -67,17 +71,17 @@ export default function Navbar() {
         <button
           type="button"
           className="nav-icon-button grid h-11 w-11 place-items-center rounded-full lg:hidden"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => dispatch(toggleMenu())}
           aria-label="Toggle navigation"
-          aria-expanded={open}
+          aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
       <AnimatePresence>
-        {open && (
+        {isMenuOpen && (
           <Motion.div
             id="mobile-navigation"
             className="mobile-drawer mt-3 px-5 pb-7 pt-4 lg:hidden"

@@ -34,11 +34,6 @@ export default defineConfig({
             'framer-motion',
             'lenis',
           ],
-
-          three: [
-            'three',
-            '@react-three/fiber',
-          ],
         },
       },
     },

@@ -23,7 +23,7 @@ const VIEWPORTS = [
     height: 1200,
     port: 9231,
     mobile: false,
-    scrollTargets: [{ id: '#gallery', filename: 'screen-gallery.png' }],
+    scrollTargets: [{ id: '#services', filename: 'screen-services.png' }],
   },
   {
     name: 'mobile',
@@ -32,8 +32,8 @@ const VIEWPORTS = [
     port: 9232,
     mobile: true,
     scrollTargets: [
-      { id: '#team',    filename: 'screen-team-mobile.png' },
-      { id: '#contact', filename: 'screen-contact-mobile.png' },
+      { id: '#testimonials', filename: 'screen-testimonials-mobile.png' },
+      { id: '#contact',      filename: 'screen-contact-mobile.png' },
     ],
   },
 ];
@@ -173,6 +173,8 @@ function attachEventCollector(client) {
 // Screenshot helpers
 // ---------------------------------------------------------------------------
 async function captureScreenshot(client, path) {
+  await client.send('Page.bringToFront');
+  await wait(250);
   const { data } = await client.send('Page.captureScreenshot', {
     format: 'png',
     fromSurface: true,
@@ -294,7 +296,7 @@ const AUDIT_EXPRESSION = /* js */ `
   const base = {
     url:            location.href,
     sections,
-    hasHeadline:    bodyText.includes('Trusted Chartered') && bodyText.includes('Financial Consultant'),
+    hasHeadline:    bodyText.includes('VOK & Associates') && bodyText.includes('Strategic tax, audit, GST and compliance advisory'),
     mainTextLength: main?.innerText.length ?? 0,
     mainHtmlLength: main?.innerHTML.length ?? 0,
     bodyTextLength: bodyText.length,
