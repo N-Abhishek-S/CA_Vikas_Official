@@ -22,9 +22,9 @@ import {
   Twitter,
 } from 'lucide-react';
 import brandMark from '../assets/gallery/brand-mark.png';
-import principalPhoto from '../assets/gallery/ca-principal.png';
-import officePhoto from '../assets/gallery/staff-collaboration.png';
-import auditDeskPhoto from '../assets/gallery/audit-desk.png';
+import principalPhoto from '../assets/gallery/ca-principal.jpg';
+import officePhoto from '../assets/gallery/staff-collaboration.jpg';
+import auditDeskPhoto from '../assets/gallery/audit-desk.jpg';
 
 export const brand = {
   name: 'VOK & Associates',
